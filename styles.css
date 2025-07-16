@@ -57,23 +57,27 @@ body, html {
 }
 
 .btn {
-  background: linear-gradient(90deg, #7c0cff, #ff00c8);
-  padding: 15px 25px;
-  color: white;
+  background: linear-gradient(135deg, #00ff88, #25D366, #00ff88);
+  background-size: 400% 400%;
+  animation: gradientMove 3s ease infinite, bounce 1.5s ease-in-out infinite;
+  padding: 18px 40px;
+  color: #ffffff;
   text-decoration: none;
   font-weight: bold;
-  border-radius: 40px;
+  border-radius: 60px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  font-size: 18px;
-  box-shadow: 0 5px 15px rgba(255, 0, 255, 0.5);
-  transition: all 0.2s ease;
+  font-size: 20px;
+  border: 3px solid #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 255, 135, 0.7);
+  transition: all 0.25s ease;
 }
 
 .btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.12);
+  box-shadow: 0 15px 30px rgba(0, 255, 135, 0.9);
 }
 
 .icon {
@@ -83,10 +87,30 @@ body, html {
 }
 
 
+
 .footer {
   position: absolute;
   bottom: 20px;
   font-size: 14px;
   font-weight: bold;
   text-shadow: 0 0 5px black;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
 }
