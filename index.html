@@ -47,20 +47,24 @@
   </div>
 
   <!-- EVENTO CLICK A WHATSAPP -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const whatsappBtn = document.getElementById('whatsapp-btn');
-      if (whatsappBtn) {
-        whatsappBtn.addEventListener('click', function (e) {
-          e.preventDefault(); // Prevenir redirección inmediata
-          fbq('trackCustom', 'ClickWhatsApp');
-          setTimeout(() => {
-            window.open('https://wa.me/5492233128943?text=Hola%2C+quiero+activar+el+bono+del+15%25+para+jugar+ahora', '_blank');
-          }, 200); // Esperar 200 ms para que el evento se dispare
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const whatsappBtn = document.getElementById('whatsapp-btn');
+    if (whatsappBtn) {
+      whatsappBtn.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevenir redirección inmediata
+        fbq('trackCustom', 'ClickWhatsApp', {
+          value: 0.00,
+          currency: 'ARS'
         });
-      }
-    });
-  </script>
+        setTimeout(() => {
+          window.open('https://wa.me/5492233128943?text=Hola%2C+quiero+activar+el+bono+del+15%25+para+jugar+ahora', '_blank');
+        }, 200); // Esperar 200 ms para que el evento se dispare
+      });
+    }
+  });
+</script>
+
 
 </body>
 </html>
